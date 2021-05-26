@@ -19,13 +19,13 @@ router.post("/ingest-hooks", function(req, res) {
                 durable: false
             });
             console.log(req.body);
-            let data = req.body;
-            /* let data = {
+            //let data = req.body;
+            let data = {
                 "name" : "Shopify webHook",
                 "product" : "Rolex Watch",
                 "price" : 10.00,
                 "total_price" : 20.00
-            } */
+            }
             channel.sendToQueue(queue, Buffer.from(JSON.stringify(data)));
             
 
